@@ -35,12 +35,12 @@
 
 <body>
     <div class="row teal" style="position: relative;height: 70px;">
-        <div class="col m3 ">
+        <div class="col m3 s10">
             <div class="center">
                 <h4 class="white-text" style="font-weight: 600;">Pocket Money</h4>
             </div>
         </div>
-        <div class="col m8 nav-mid-item " style="margin: 0;padding: 0;height: 100%;">
+        <div class="col m8 nav-mid-item hide-on-small-only " style="margin: 0;padding: 0;height: 100%;">
             <div class="" style="display: flex;justify-content: center;height:100%;align-items: center;">
                 <div class="mid-item">
                     Home
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="col m1" style="height: 100%;">
+        <div class="col m1 s2" style="height: 100%;">
             <div class="" style="height: 100%;display: flex; justify-content:center; align-items: center;">
                 <img width="50px" style="border-radius: 50%;padding: 10px;background: teal;"
                     src="https://randomuser.me/api/portraits/lego/4.jpg" alt="" srcset="">
@@ -69,7 +69,7 @@
 
     <div class="">
         <div class="row">
-            <div class="col m8">
+            <div class="col m8 ">
                 <div class="container" id="work_panel">
 
                 </div>
@@ -101,7 +101,7 @@
         {
             img_link: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
             title: 'Computer and mobile services',
-            content: 'For door to door service  call us at 98xxxxxxxx. ',
+            content: 'For door to door electronic service  call us at 98xxxxxxxx. ',
             rate: "according to problem"
         },
 
@@ -109,9 +109,9 @@
     for (let i = 0; i < work.length; i++) {
         let temp = `<div class="card grey lighten-3" style="border-radius:30px;overflow: hidden;">
                         <div class="card-image" style="border-radius:30px;overflow: hidden;">
-                            <img src="${work[i].img_link}">
+                            <img style="max-height:500px" src="${work[i].img_link}">
                             <span class="card-title"
-                                style="background-color: rgba(0, 0, 0, .5); padding: 5px 20px;margin-left: 0px;border-top-right-radius:30px;font-weight:400">${work[i].title}</span>
+                                style="background-color: rgba(0, 0, 0, .7); padding: 5px 20px;margin-left: 0px;border-top-right-radius:30px;font-weight:400">${work[i].title}</span>
                         </div>
                         <div class="card-content">
                             <p>${work[i].content}</p>
