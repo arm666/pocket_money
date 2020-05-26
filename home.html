@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Money</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        #search {
+            border: 0px solid transparent;
+        }
+
+        #search:focus {
+            background-color: teal;
+            color: white;
+        }
+
+        .mid-item {
+            margin: 20px;
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 10px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row teal" style="position: relative;height: 70px;">
+        <div class="col m3 ">
+            <div class="center">
+                <h4 class="white-text" style="font-weight: 600;">Pocket Money</h4>
+            </div>
+        </div>
+        <div class="col m8 nav-mid-item " style="margin: 0;padding: 0;height: 100%;">
+            <div class="" style="display: flex;justify-content: center;height:100%;align-items: center;">
+                <div class="mid-item">
+                    Home
+                </div>
+                <div class="mid-item">
+                    Dashboard
+                </div>
+                <div class="mid-item">
+                    Find Jobs
+                </div>
+                <div class="mid-item">
+                    Hire
+                </div>
+                <div class="mid-item">
+                    Inbox
+                </div>
+            </div>
+        </div>
+        <div class="col m1" style="height: 100%;">
+            <div class="" style="height: 100%;display: flex; justify-content:center; align-items: center;">
+                <img width="50px" style="border-radius: 50%;padding: 10px;background: teal;"
+                    src="https://randomuser.me/api/portraits/lego/4.jpg" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+
+    <div class="">
+        <div class="row">
+            <div class="col m8">
+                <div class="container" id="work_panel">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+    });
+    var work = [
+        {
+            img_link: 'https://i.pinimg.com/564x/38/79/0b/38790b48a0eac24355b08a091f6c7925.jpg',
+            title: 'Rangoli',
+            content: 'I build awesome rangoli design. Customer also can give design.',
+            rate: "100"
+        },
+        {
+            img_link: 'https://i.pinimg.com/564x/7c/07/34/7c0734fcf93379be25bd7843797976c1.jpg',
+            title: 'Decorator',
+            content: 'Decorate it and make happy house ',
+            rate: "50"
+        },
+        {
+            img_link: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+            title: 'Computer and mobile services',
+            content: 'For door to door service  call us at 98xxxxxxxx. ',
+            rate: "according to problem"
+        },
+
+    ]
+    for (let i = 0; i < work.length; i++) {
+        let temp = `<div class="card grey lighten-3" style="border-radius:30px;overflow: hidden;">
+                        <div class="card-image" style="border-radius:30px;overflow: hidden;">
+                            <img src="${work[i].img_link}">
+                            <span class="card-title"
+                                style="background-color: rgba(0, 0, 0, .5); padding: 5px 20px;margin-left: 0px;border-top-right-radius:30px;font-weight:400">${work[i].title}</span>
+                        </div>
+                        <div class="card-content">
+                            <p>${work[i].content}</p>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn" style="font-weight: 800;">@ Rs.${work[i].rate}</button>
+                            <button class="btn" style="font-weight: 500;">Hire for Work</button>
+                        </div>
+                    </div>`
+
+        $("#work_panel").append(temp)
+
+
+    }
+</script>
