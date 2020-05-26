@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <style>
         #search {
             border: 0px solid transparent;
@@ -21,109 +20,197 @@
         }
 
         .mid-item {
-            margin: 20px;
-            padding: 10px;
-            width: 100px;
+            margin: 10px 20px;
+            padding: 5px;
+            width: 150px;
             text-align: center;
             font-weight: bold;
             color: white;
             border-radius: 10px;
             background-color: teal;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mid-item a {
+            color: white;
+            user-select: none;
+        }
+
+        .mid-item:hover {
+            background-color: rgb(4, 71, 71);
+            transition: .3s;
+
+        }
+
+        .profile_img {
+            border-radius: 50%;
+            padding: 10px;
+            background: white;
+        }
+
+        .profile_img:hover {
+            background-color: teal;
+            cursor: pointer;
+            transition: .5s;
         }
     </style>
 </head>
 
 <body>
-    <div class="row teal" style="position: relative;height: 70px;">
-        <div class="col m3 s10">
-            <div class="center">
-                <h4 class="white-text" style="font-weight: 600;">Pocket Money</h4>
+    <div id="createapost" class=" modal modal-fixed-footer">
+        <div class="center">
+            <h4>Create a Post</h4>
+        </div>
+        <div class="modal-content">
+            <div class="input-field">
+                <input type="text" placeholder="Title">
+                <input type="text" placeholder="Content Title">
+                <input type="text" placeholder="Amount">
+                <input type="text" placeholder="Image Link">
             </div>
         </div>
-        <div class="col m8 nav-mid-item hide-on-small-only " style="margin: 0;padding: 0;height: 100%;">
-            <div class="" style="display: flex;justify-content: center;height:100%;align-items: center;">
-                <div class="mid-item">
-                    Home
-                </div>
-                <div class="mid-item">
-                    Dashboard
-                </div>
-                <div class="mid-item">
-                    Find Jobs
-                </div>
-                <div class="mid-item">
-                    Hire
-                </div>
-                <div class="mid-item">
-                    Inbox
-                </div>
-            </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn">Create a post</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn red ">Cancel</a>
         </div>
-        <div class="col m1 s2" style="height: 100%;">
-            <div class="" style="height: 100%;display: flex; justify-content:center; align-items: center;">
-                <img width="50px" style="border-radius: 50%;padding: 10px;background: teal;"
-                    src="https://randomuser.me/api/portraits/lego/4.jpg" alt="" srcset="">
+
+    </div>
+    <div class="row teal" style="margin-bottom: 0;">
+        <div class="row ">
+            <div class="col s12">
+                <div class="col m10 s10 ">
+                    <div class="center">
+                        <h4 class="white-text" style="font-weight:bold">Pocket Money</h4>
+                    </div>
+                </div>
+                <div class="col m2 s2" style="height: 69px;">
+                    <div class="" style="height: 100%;display: flex; justify-content:center; align-items: center;">
+                        <img class="profile_img" width="50px" style=""
+                            src="https://randomuser.me/api/portraits/lego/4.jpg" alt="" srcset="">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <div class="teal"
+        style="display: flex;justify-content: center;height:100%;align-items: center;flex-wrap: wrap;position: sticky;top: 0;z-index: 100;box-shadow:0px 5px 5px 1px rgba(0,0,0,.5);">
+        <div class="mid-item waves-effect waves-light">
+            Home
+        </div>
+        <div class="mid-item waves-effect waves-light">
+            <a class=" modal-trigger" href="#createapost">Create a post</a>
+        </div>
 
+        <div class="mid-item waves-effect waves-light">
+            Dashboard
+        </div>
+        <div class="mid-item waves-effect waves-light">
+            Find Jobs
+        </div>
+
+        <div class="mid-item waves-effect waves-light">
+            Inbox
+        </div>
+    </div>
     <div class="">
         <div class="row">
-            <div class="col m8 ">
-                <div class="container" id="work_panel">
-
-                </div>
-            </div>
+            <div class="col s12 m4" id="work_panel_1"
+                style="display: flex;flex-direction: column; align-items: center; justify-content: center;"></div>
+            <div class="col s12 m4" id="work_panel_2"
+                style="display: flex;flex-direction: column; align-items: center; justify-content: center;"></div>
+            <div class="col s12 m4" id="work_panel_3"
+                style="display: flex;flex-direction: column; align-items: center; justify-content: center;"></div>
         </div>
+    </div>
     </div>
 
 </body>
 
 </html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('.sidenav').sidenav();
+        $('.modal').modal();
     });
     var work = [
         {
             img_link: 'https://i.pinimg.com/564x/38/79/0b/38790b48a0eac24355b08a091f6c7925.jpg',
             title: 'Rangoli',
             content: 'I build awesome rangoli design. Customer also can give design.',
-            rate: "100"
-        },
-        {
-            img_link: 'https://i.pinimg.com/564x/7c/07/34/7c0734fcf93379be25bd7843797976c1.jpg',
-            title: 'Decorator',
-            content: 'Decorate it and make happy house ',
-            rate: "50"
+            rate: "100",
+            rating: 4
         },
         {
             img_link: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
             title: 'Computer and mobile services',
             content: 'For door to door electronic service  call us at 98xxxxxxxx. ',
-            rate: "according to problem"
+            rate: "according to problem",
+            rating: 5
         },
-
+        {
+            img_link: 'https://i.pinimg.com/564x/7c/07/34/7c0734fcf93379be25bd7843797976c1.jpg',
+            title: 'Decorator',
+            content: 'Decorate it and make happy house ',
+            rate: "50",
+            rating: 4
+        },
+        {
+            img_link: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
+            title: 'Computer and mobile services',
+            content: 'For door to door electronic service  call us at 98xxxxxxxx. ',
+            rate: "according to problem",
+            rating: 5
+        },
+        {
+            img_link: 'https://i.pinimg.com/564x/7c/07/34/7c0734fcf93379be25bd7843797976c1.jpg',
+            title: 'Decorator',
+            content: 'Decorate it and make happy house ',
+            rate: "50",
+            rating: 4
+        }, 
+        {
+            img_link: 'https://i.pinimg.com/564x/38/79/0b/38790b48a0eac24355b08a091f6c7925.jpg',
+            title: 'Rangoli',
+            content: 'I build awesome rangoli design. Customer also can give design.',
+            rate: "100",
+            rating: 4
+        },
     ]
     for (let i = 0; i < work.length; i++) {
-        let temp = `<div class="card grey lighten-3" style="border-radius:30px;overflow: hidden;">
-                        <div class="card-image" style="border-radius:30px;overflow: hidden;">
+        let stars = ''
+        for (let j = 0; j < work[i].rating; j++)
+            stars += '⭐'
+        let temp = `<div class="card grey lighten-3" style="border-radius:20px;overflow: hidden;max-width:350px;margin:20px">
+                        <div class="card-image" style="border-radius:20px;overflow: hidden;">
                             <img style="max-height:500px" src="${work[i].img_link}">
                             <span class="card-title"
-                                style="background-color: rgba(0, 0, 0, .7); padding: 5px 20px;margin-left: 0px;border-top-right-radius:30px;font-weight:400">${work[i].title}</span>
+                                style="background-color: rgba(0, 0, 0, .7); padding: 5px 20px;margin-left: 0px;border-top-right-radius:30px;font-weight:400;font-size:20px">${work[i].title}</span>
                         </div>
-                        <div class="card-content">
+                        <div class="card-content" style="">
                             <p>${work[i].content}</p>
                         </div>
                         <div class="card-action">
-                            <button class="btn" style="font-weight: 800;">@ Rs.${work[i].rate}</button>
-                            <button class="btn" style="font-weight: 500;">Hire for Work</button>
+                            <div class=" " style="font-weight: 400;text-transform:initial;">@ Rs. ${work[i].rate}  <pre>Rating:${stars} </pre></div>
+                            <button class="btn btn-small green waves-effect" style="width:100%;font-weight: 500;text-transform:initial;font-weight:bold;">Hire</button>
                         </div>
                     </div>`
 
-        $("#work_panel").append(temp)
-
+        if (i % 3 == 0) {
+            $("#work_panel_1").append(temp)
+        }
+        if (i % 3 == 1) {
+            $("#work_panel_2").append(temp)
+        }
+        if (i % 3 == 2) {
+            $("#work_panel_3").append(temp)
+        }
+        console.log(i % 3)
 
     }
 </script>
